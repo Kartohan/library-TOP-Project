@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, hsl(183,0%,100%),hsl(183,0%,100%));
+}
+.library {
+    display: grid;
+    gap: 20px;
+    max-width: 900px;
+}
+.book {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr) repeat(3, 0.3fr);
+    justify-items: start;
+    align-items: center;
+    gap: 30px;
+}
+.book:nth-of-type(n+3)::before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(211, 211, 211);
+}
+h1:first-child {
+    padding-top: 30px;
+}
+.table-names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) repeat(3, 0.3fr);
+    gap: 30px;
+}
+.book p {
+    font-size: 1.5em;
+}
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+form input {
+    padding-left: 5px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.178);
+    transition: .3s;
+}
+form input:hover {
+    box-shadow: 0px 0px 3px 0px #000000;
+}
+form input:focus {
+    box-shadow: 0px 0px 3px 0px #000000;
+    outline: none;
+}
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+form button:hover {
+    box-shadow: 0px 0px 3px 0px #000000;
+}
+form button:active {
+    box-shadow: inset 0px 0px 3px 0px #000000;
+}
+
+button {
+    cursor: pointer;
+}
+input {
+    cursor: pointer;
+}
+.add h2 {
+    margin-bottom: 10px;
+}
+.read {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkRead {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    transition: .3s;
+    background-color: rgb(201, 201, 201);
+    cursor: pointer;
+}
+.checkRead:hover {
+    background-color: rgb(145, 145, 145);
+}
+.read:checked ~ .checkRead {
+    background-color: rgb(67, 133, 255);
+}
+.read:checked ~ .checkRead::after {
+    background-color: rgb(255, 255, 255);
+}
+.checkRead::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(139, 139, 139);
+}
+.form-field {
+    position: relative;
+}
+.labelRead {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+}
+.book button {
+    padding: 10px;
+    border: none;
+    justify-self: center;
+    border-radius: 5px;
+}
+.delete {
+    background-color: rgb(255, 136, 136);
+    color: white;
+}
+.done {
+    background-color: rgb(187, 255, 193);
+}
+.readBtn {
+    width: 90px;
+}
